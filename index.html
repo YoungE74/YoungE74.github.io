@@ -1,97 +1,567 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>我的视频展示页</title>
+    <meta charset="utf-8">
+    <meta name="description" content="UniFES: A Unified Recurrent Network for Quality Enhancement and Stabilization in Face Videos">
+    <meta name="keywords" content="Face video quality enhancement, face video stabilization, unified recurrent network">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UniFES: A Unified Recurrent Network for Quality Enhancement and Stabilization in Face Videos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 20px;
+        #pic_list {
+            display: block;
+            white-space: nowrap;
+            overflow: auto;
         }
-        h1 {
-            text-align: center;
-            color: #333;
+
+        #pic_list li {
+            display: inline-block;
         }
-        h2 {
-            margin-top: 40px;
-            color: #444;
-        }
-        .section {
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .video-container {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
+
     </style>
 </head>
+
 <body>
-    <h1>我的GitHub视频展示页</h1>
 
-    <!-- 部分 1 -->
-    <div class="section">
-        <h2>文件夹 1</h2>
-        <div class="video-grid">
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/Input.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/SelfieVS_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/SelfieVS_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/MetaVideoStab_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/MetaVideoStab_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/Baietal_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/PGTFormer_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/Baietal_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/PGTFormer_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/1/Ours.mp4" type="video/mp4"></video></div>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">UniFES: A Unified Recurrent Network for Quality Enhancement and Stabilization in Face Videos</h1>
+
+                </div>
+            </div>
         </div>
     </div>
+</section>
+<br>
 
-    <!-- 部分 2 -->
-    <div class="section">
-        <h2>文件夹 5</h2>
-        <div class="video-grid">
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/Input.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/SelfieVS_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/SelfieVS_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/MetaVideoStab_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/MetaVideoStab_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/Baietal_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/PGTFormer_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/Baietal_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/PGTFormer_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/5/Ours.mp4" type="video/mp4"></video></div>
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p> Recent years have witnessed an explosive increase of face content, that drives a distinct shift from static images to dynamic video formats.
+                        The shift of formats inherently alters the characteristics within face videos, whereby pixel-wise artifacts are intertwined with motion-related impairments.
+                        Addressing the emerging distortions that now always appear by twins in practice, however, is challenging and non-trivial, due to the distinct characteristics
+                        in addressing spatial-temporal frequencies in videos. In this paper, we propose a novel \underline{Uni}fied recurrent network for joint \underline{F}ace video quality \underline{E}nhancement and \underline{S}tabilization (UniFES),
+                        as the first successful attempt for both quality enhancement and motion stabilization. Correspondingly, our UniFES method proposes to effectively aggregate the mutual information in the pixel and motion domains.
+                        For the quality enhancement, our UniFES method decomposes the shaking temporal alignment problem into progressive feature alignment with explicit physical information, which includes the global dynamics from the motion domain,
+                        i.e., from the stabilization task. Regarding the video stabilization, we integrate the mixed dynamics from the enhancement task (i.e.,, from pixel domain) to take into account both pixel-wise and motion-related characteristics,
+                        for ensuring robust trajectory estimation and motion stabilization. Subsequently, we refine the warping masks to achieve high-quality full frame rendering. We further establish a synthetic dataset for training and evaluation regarding this emerging task.
+                        Comprehensive experiments have illustrated the superior performances of our UniFES method over 24 comparing baselines on both newly established synthetic and real-world datasets.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- 部分 3 -->
-    <div class="section">
-        <h2>文件夹 30</h2>
-        <div class="video-grid">
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/Input.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/SelfieVS_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/SelfieVS_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/MetaVideoStab_Baietal.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/MetaVideoStab_PGTFormer.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/Baietal_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/PGTFormer_SelfieVS.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/Baietal_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/PGTFormer_MetaVideoStab.mp4" type="video/mp4"></video></div>
-            <div class="video-container"><video controls><source src="https://cdn.jsdelivr.net/gh/YoungE74/YoungE74.github.io@main/30/Ours.mp4" type="video/mp4"></video></div>
+
+<!-- <section class="section">
+    <div class="container is-four-fifths">
+        <h3 class="title is-4 has-text-centered">(1) Demo of synthetic videos</h3>
+        <div class="content has-text-justified"> -->
+
+            <!-- 第一行：4个视频 -->
+            <!-- <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/Input.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Input</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/2/Yuetal_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Yu et al. + Bai et al.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/Yuetal_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Yu et al. + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/2/MetaVideoStab_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + Bai et al.</p>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- 第二行：4个视频 -->
+            <!-- <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/MetaVideoStab_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/2/Baietal_Yuetal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + Yu et al.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/PGTFormer_Yuetal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + Yu et al.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/Baietal_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + MetaVideoStab</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- 第三行：3个视频 -->
+            <!-- <div class="columns is-centered">
+                <div class="column is-3">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/PGTFormer_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + MetaVideoStab</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/UniFES.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">UniFES</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/2/GT.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">GT</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</section> -->
 
+
+<section class="section">
+    <div class="container is-four-fifths">
+        <h3 class="title is-4 has-text-centered">(1) Demo of real-world face videos</h3>
+        <div class="content has-text-justified">
+
+            <!-- 第一行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/Input.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Input</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/1/SelfieVS_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/SelfieVS_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/1/MetaVideoStab_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/MetaVideoStab_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/1/Baietal_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + SelfieVS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/PGTFormer_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + SelfieVS</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/Baietal_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + MetaVideoStab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/PGTFormer_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + MetaVideoStab</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/1/Ours.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">UniFES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-four-fifths">
+        <h3 class="title is-4 has-text-centered">(2) Demo of real-world face videos</h3>
+        <div class="content has-text-justified">
+
+            <!-- 第一行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/Input.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Input</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/5/SelfieVS_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/SelfieVS_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/5/MetaVideoStab_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/MetaVideoStab_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/5/Baietal_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + SelfieVS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/PGTFormer_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + SelfieVS</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/Baietal_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + MetaVideoStab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/PGTFormer_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + MetaVideoStab</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/5/Ours.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">UniFES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-four-fifths">
+        <h3 class="title is-4 has-text-centered">(3) Demo of real-world face videos</h3>
+        <div class="content has-text-justified">
+
+            <!-- 第一行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/Input.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Input</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/30/SelfieVS_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/SelfieVS_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">SelfieVS. + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/30/MetaVideoStab_Baietal.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + Bai et al.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/MetaVideoStab_PGTFormer.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">MetaVideoStab + PGTFormer</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="./static/video/30/Baietal_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + SelfieVS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/PGTFormer_SelfieVS.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + SelfieVS</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/Baietal_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">Bai et al. + MetaVideoStab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五行：2个视频 -->
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/PGTFormer_MetaVideoStab.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">PGTFormer + MetaVideoStab</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <video controls muted preload autoplay loop height="100%">
+                            <source src="static/video/30/Ours.mp4" type="video/mp4">
+                        </video>
+                        <p style="color:#7030A0; text-align: center;">UniFES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3 "> Benchmark results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Comprehensive experiments have illustrated the superior performances of our UniFES method over 24 comparing baselines on both newly established synthetic and real-world datasets.
+                    </p>
+                </div>
+                <figure>
+                    <figcaption>Table 1: Quantitative results of our UniFES and comparing methods over the synthetic CelebVFES-Test dataset. We calculate the metrics of stabilization,
+                        i.e., cropping ratio (Crop.), distortion value (Dist.) and stability score (Stab.), and the metrics of quality enhancement, i.e., PSNR, SSIM and LPIPS
+                        for comprehensive comparisons. The best results are in bold and the second best results are in underline.
+                    </figcaption>
+                    <image src="static/video/results_synthetic.png" class="img-responsive" alt="overview" height="100%"
+                           width="auto">
+                    </image>
+                </figure>
+
+                <figure>
+                    <figcaption>Table 2: Quantitative results of our UniFES and comparing methods over the real-world Selfie dataset. We calculate the metrics of stabilization,
+                        i.e., cropping ratio (Crop.), distortion value (Dist.) and stability score (Stab.), and the metrics of quality enhancement, i.e., MUSIQ, CLIPIQA (CLIP.)
+                        and DOVER for comprehensive comparisons. The best results are in bold and the second best results are in underline.
+                    </figcaption>
+                    <image src="static/video/results_realworld.png" class="img-responsive" alt="overview" height="100%"
+                           width="auto">
+                    </image>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+        <div class="content">
+            <p> This template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io"> nerfies's
+                webpage</a>. </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(window).on('load', function () {
+        $('#loading').hide();
+    })
+</script>
 </body>
+
 </html>
